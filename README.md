@@ -2,28 +2,35 @@
 # Touch Pad Restart
 This solves the problem of the laptop in the touchpad turning off.
 ## Bug i2c_hid_acpi
-`modprobe -r i2c_hid_acpi`
-`modprobe i2c_hid_acpi`
+```
+# modprobe -r i2c_hid_acpi
 
-## enable response to touch
-`synclient TapButton1=1`
+# modprobe i2c_hid_acpi
+```
 
-`synclient TapButton2=3`
+## Enable response to touch
+```
+synclient TapButton1=1
 
-## disable touchpad while typing
+synclient TapButton2=3
+```
+
+## Disable touchpad while typing
 `syndaemon -i 0.2 -d`
 
 # Installing
 
-`# cd crutchTouchPadRestart`
+```
+# cd crutchTouchPadRestart
 
-`# cp touchpadrestart /usr/local/bin`
+# cp touchpadrestart /usr/local/bin
 
-`# cp tpadrestart.service /etc/systemd/system`
+# cp tpadrestart.service /etc/systemd/system
 
-`# systemctl start tpadrestart.service`
+# systemctl start tpadrestart.service
 
-`# systemctl enable tpadrestart.service`
+# systemctl enable tpadrestart.service
+```
 
 # Created by Alexander Komyakov
 For any kind of help, support, suggetion and request ask in me
