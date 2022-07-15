@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+export DISPLAY=:0
+USER=$(ls /home/)
+export XAUTHORITY="/home/$USER/.Xauthority"
+while true; do
+	killall syndaemon
+	modprobe -r i2c_hid_acpi
+	sleep 1
+	modprobe i2c_hid_acpi
+	sleep 1
+	synclient TapButton1=1
+	synclient TapButton2=3
+	syndaemon -i 0.2 -d
+	sleep 30
+done

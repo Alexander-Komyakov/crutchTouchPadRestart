@@ -1,0 +1,8 @@
+[Unit]
+Description=Touch pad Restart
+
+[Service]
+ExecStart=/usr/local/bin/touchpadrestart
+
+[Install]
+WantedBy=multi-user.target
