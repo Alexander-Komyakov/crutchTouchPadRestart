@@ -7,6 +7,8 @@ while true; do
 	killall syndaemon
 	modprobe -r i2c_hid_acpi
 	modprobe i2c_hid_acpi
+	modprobe -r idma64
+	modprobe idma64
 	sleep 1
 	synclient TapButton1=1
 	synclient TapButton2=3
